@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-class InputField
+class PasswordField
 {
     public static void main(String args[])
     {
@@ -14,27 +14,23 @@ class InputField
         frame.setLocation(600, 100);
 
 
-        //Text Field
-        JTextField tf = new JTextField();
-        frame.add(tf);
+        //Password Field
+        JPasswordField pf = new JPasswordField();
+        frame.add(pf);
 
         //Dimensions
-        tf.setBounds(100, 100, 200, 30);
+        pf.setBounds(100, 100, 200, 30);
 
         //Text
-        tf.setText("Name");
+        pf.setText("pass@123");
 
-        //Font
-        Font f = new Font("Arial", Font.BOLD, 18);
-        tf.setFont(f);
+        //Character for hiding password
+        pf.setEchoChar('*');
 
         //Foreground color
-        tf.setForeground(Color.black);
+        pf.setForeground(Color.black);
 
         //Background color
-        tf.setBackground(Color.cyan);
-
-        //Preventing user from typing
-        tf.setEditable(false);
+        pf.setBackground(Color.cyan);
     }
 }
