@@ -2,12 +2,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class MyFrame extends JFrame implements ActionListener
+class MyFrame1 extends JFrame implements ActionListener
 {
     Container c;
     JButton button;
 
-    MyFrame()
+    MyFrame1()
     {
         //Container
         c = this.getContentPane();
@@ -40,12 +40,12 @@ class MyFrame extends JFrame implements ActionListener
 }
 
 
-class ButtonAction
+class ButtonAction1
 {
     public static void main(String args[])
     {
         /* Basic JFrame */
-        MyFrame frame = new MyFrame();
+        MyFrame1 frame = new MyFrame1();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("My app");
