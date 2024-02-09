@@ -16,7 +16,7 @@ class MyFrame1 extends JFrame implements ActionListener
         //Button
         button = new JButton("Click me");
 
-        //Location Size
+        //Bounds
         button.setBounds(130, 100, 130, 30);
 
         //Font
