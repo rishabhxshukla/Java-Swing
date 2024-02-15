@@ -42,8 +42,8 @@ class RadioButton
         radioBtn2.setFont(f);
 
         //Button group
-        ButtonGroup group = new ButtonGroup();
-        group.add(radioBtn1);
-        group.add(radioBtn2);
+        ButtonGroup gender = new ButtonGroup();
+        gender.add(radioBtn1);
+        gender.add(radioBtn2);
     }
 }
