@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.*;
 
 class Button
 {
@@ -7,30 +8,21 @@ class Button
     {
         /* Basic JFrame */
         JFrame frame = new JFrame();
-        frame.setVisible(true);
+        frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("My app");
-        frame.setSize(400, 300);
-        frame.setLocation(600, 100);
+        frame.setSize(600, 500);
+        frame.setLocation(500, 100);
 
-        //Container
-        Container c = frame.getContentPane();
-        c.setLayout(null);
 
-        //Button
+        //Creating a button
         JButton button = new JButton();
 
-        //Adding button to window
-        frame.add(button);
-
         //Text
-        button.setText("Click me!");
+        button.setText("On");
 
-        //Size
-        button.setSize(150, 50);
-
-        //Location
-        button.setLocation(100, 100);
+        //Dimensions
+        button.setBounds(220, 220, 150, 50);
 
         //Foreground color
         button.setForeground(Color.black);
@@ -39,11 +31,50 @@ class Button
         button.setBackground(Color.cyan);
 
         //Font
-        Font f = new Font("Arial", Font.BOLD, 22);
-        button.setFont(f);
+        Font font = new Font("Lucida Sans", Font.BOLD, 25);
+        button.setFont(font);
+
+        //Focus
+        button.setFocusable(false);
 
         //Cursor
         Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
         button.setCursor(cursor);
+
+        //Border
+        Border border = BorderFactory.createRaisedSoftBevelBorder();
+        button.setBorder(border);
+
+        //Disabling button
+        /* button.setEnabled(false); */
+
+        //Image
+        ImageIcon icon = new ImageIcon("Images/Icon.jpg");
+        Image image = icon.getImage().getScaledInstance(120, 120, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(image);
+        JLabel label = new JLabel();
+        label.setIcon(scaledIcon);
+        label.setBounds(240, 60, 120, 120);
+        frame.add(label);
+
+        //Action listener
+        button.addActionListener((e) -> {
+            if (button.getText().equals("On")) {
+                button.setText("Off");
+                label.setVisible(false);
+                frame.getContentPane().setBackground(Color.DARK_GRAY);
+            }
+            else {
+                button.setText("On");
+                label.setVisible(true);
+                frame.getContentPane().setBackground(Color.LIGHT_GRAY);
+            }
+        });
+
+        //Adding button to frame
+        frame.add(button);
+
+        //Making frame visible
+        frame.setVisible(true);
     }
 }

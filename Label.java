@@ -20,7 +20,7 @@ class Label
         //Text
         label.setText("Hello world!");
 
-        //Bounds
+        //Dimensions
         label.setBounds(130, 60, 310, 280);
 
         //Foreground color
@@ -49,7 +49,7 @@ class Label
         //Gap between text and image
         label.setIconTextGap(10);
 
-        //Adding label to window
+        //Adding label to frame
         frame.add(label);
 
         //Making frame visible

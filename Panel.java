@@ -7,58 +7,104 @@ class Panel
     {
         /* Basic JFrame */
         JFrame frame = new JFrame();
-        frame.setVisible(true);
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("My app");
-        frame.setSize(500, 400);
+        frame.setSize(600, 500);
         frame.setLocation(500, 100);
 
 
-        //JPanel 1
-        JPanel jp1 = new JPanel();
+        //Creating 1st panel
+        JPanel panel1 = new JPanel();
 
-        //Adding panel to frame
-        frame.add(jp1);
-
-        //Null layout
-        jp1.setLayout(null);
+        //Border layout
+        panel1.setLayout(new BorderLayout());
 
         //Dimensions
-        jp1.setBounds(140,60, 200, 200);
+        panel1.setBounds(0,0, 200, 200);
 
         //Background color
-        jp1.setBackground(Color.blue);
+        panel1.setBackground(Color.RED);
 
-        /*---------------------------------------------*/
+        //Adding panel 1 to frame
+        frame.add(panel1);
 
-        //JPanel 2
-        JPanel jp2 = new JPanel();
+        /*-----------------------------------------------*/
 
-        //Adding panel to 1st panel
-        jp1.add(jp2);
+        //Creating 2nd panel
+        JPanel panel2 = new JPanel();
 
-        //Null layout
-        jp2.setLayout(null);
+        //Border layout
+        panel2.setLayout(new BorderLayout());
 
         //Dimensions
-        jp2.setBounds(40,37, 120, 120);
+        panel2.setBounds(200,0, 200, 200);
 
         //Background color
-        jp2.setBackground(Color.red);
+        panel2.setBackground(Color.BLUE);
 
-        /*---------------------------------------------*/
+        //Adding panel 2 to frame
+        frame.add(panel2);
 
-        //Button
-        JButton button = new JButton();
+        /*-----------------------------------------------*/
 
-        //Adding button to 2nd panel
-        jp2.add(button);
+        //Creating 3rd panel
+        JPanel panel3 = new JPanel();
 
-        //Text
-        button.setText("Click me");
+        //Border layout
+        panel3.setLayout(new BorderLayout());
 
         //Dimensions
-        button.setBounds(18,45,85,30);
+        panel3.setBounds(400,0, 200, 200);
+
+        //Background color
+        panel3.setBackground(Color.GREEN);
+
+        //Adding panel 3 to frame
+        frame.add(panel3);
+
+        /*-----------------------------------------------*/
+
+        //Creating 4th panel
+        JPanel panel4 = new JPanel();
+
+        //Null layout
+        panel4.setLayout(null);
+
+        //Dimensions
+        panel4.setBounds(0,200, 600, 300);
+
+        //Background color
+        panel4.setBackground(Color.YELLOW);
+
+        //Adding panel 4 to frame
+        frame.add(panel4);
+
+        /*-----------------------------------------------*/
+
+        //Adding items on panels
+        JLabel label1 = new JLabel("Panel 1");
+        label1.setVerticalAlignment(JLabel.CENTER);
+        label1.setHorizontalAlignment(JLabel.CENTER);
+        panel1.add(label1);
+
+        JLabel label2 = new JLabel("Panel 2");
+        label2.setVerticalAlignment(JLabel.CENTER);
+        label2.setHorizontalAlignment(JLabel.CENTER);
+        panel2.add(label2);
+
+        JLabel label3 = new JLabel("Panel 3");
+        label3.setVerticalAlignment(JLabel.CENTER);
+        label3.setHorizontalAlignment(JLabel.CENTER);
+        panel3.add(label3);
+
+        JButton button = new JButton("Panel 4");
+        button.setBounds(250, 120, 80, 20);
+        panel4.add(button);
+
+        //Making frame visible
+        frame.setVisible(true);
+
+        /*-----------------------------------------------*/
     }
 }
