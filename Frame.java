@@ -8,23 +8,23 @@ class Frame
         //Creating a window
         JFrame frame = new JFrame();
 
-        //Making window visible                          
-        frame.setVisible(true);
-
         //Stopping program with 'X'
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //Null layout
+        frame.setLayout(null);
 
         //Title
         frame.setTitle("My app");
 
         //Window size
-        frame.setSize(400, 300);
+        frame.setSize(600, 500);
 
         //Window location
-        frame.setLocation(600, 100);
+        frame.setLocation(500, 100);
 
         //Setting location and size together
-        frame.setBounds(600, 100, 400, 300);
+        frame.setBounds(500, 100, 600, 500);
 
         //Preventing window resize
         frame.setResizable(false);
@@ -34,7 +34,9 @@ class Frame
         frame.setIconImage(icon.getImage());
 
         //Background color
-        Container c = frame.getContentPane();
-        c.setBackground(Color.PINK);
+        frame.getContentPane().setBackground(Color.PINK);
+
+        //Making window visible
+        frame.setVisible(true);
     }
 }
