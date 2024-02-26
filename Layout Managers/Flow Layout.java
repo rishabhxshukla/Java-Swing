@@ -1,7 +1,8 @@
+package LayoutManagers;
 import java.awt.*;
 import javax.swing.*;
 
-class Border_Layout
+class Flow_Layout
 {
     public static void main(String args[])
     {
@@ -14,7 +15,7 @@ class Border_Layout
 
 
         //Setting frame layout
-        frame.setLayout(new BorderLayout(5, 5));
+        frame.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
 
         //Creating panels
         JPanel panel1 = new JPanel();
@@ -31,18 +32,18 @@ class Border_Layout
         panel5.setBackground(Color.PINK);
 
         //Preferred size of panels
-        panel1.setPreferredSize(new Dimension(100, 50));
+        panel1.setPreferredSize(new Dimension(100, 100));
         panel2.setPreferredSize(new Dimension(100, 100));
         panel3.setPreferredSize(new Dimension(100, 100));
         panel4.setPreferredSize(new Dimension(100, 100));
-        panel5.setPreferredSize(new Dimension(100, 50));
+        panel5.setPreferredSize(new Dimension(100, 100));
 
-        //Adding panels to frame using Border Layout
-        frame.add(panel1, BorderLayout.NORTH);          //Height is fixed
-        frame.add(panel2, BorderLayout.WEST);           //Width is fixed
-        frame.add(panel3, BorderLayout.CENTER);         //Width is fixed
-        frame.add(panel4, BorderLayout.EAST);           //Width is fixed
-        frame.add(panel5, BorderLayout.SOUTH);          //Height is fixed
+        //Adding panels to frame
+        frame.add(panel1);
+        frame.add(panel2);
+        frame.add(panel3);
+        frame.add(panel4);
+        frame.add(panel5);
 
         //Making frame visible
         frame.setVisible(true);
