@@ -7,43 +7,44 @@ class RadioButton
     {
         /* Basic JFrame */
         JFrame frame = new JFrame();
-        frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
         frame.setTitle("My app");
-        frame.setSize(400, 300);
-        frame.setLocation(600, 100);
+        frame.setSize(600, 500);
+        frame.setLocation(500, 100);
 
 
-        //Create a panel with FlowLayout
-        JPanel panel = new JPanel(new FlowLayout());
-
-        //Radio buttons
+        //Creating radio buttons
         JRadioButton radioBtn1 = new JRadioButton();
         JRadioButton radioBtn2 = new JRadioButton();
 
-        //Adding radio buttons to panel
-        panel.add(radioBtn1);
-        panel.add(radioBtn2);
-
-        //Adding panel to frame
-        frame.add(panel);
-
         //Dimensions
-        radioBtn1.setBounds(50, 50, 100, 50);
-        radioBtn2.setBounds(50, 100, 100, 50);
+        radioBtn1.setBounds(220, 150, 100, 50);
+        radioBtn2.setBounds(220, 200, 120, 50);
 
         //Text
         radioBtn1.setText("Male");
         radioBtn2.setText("Female");
 
         //Font
-        Font f = new Font("MV Boli", Font.PLAIN, 25);
-        radioBtn1.setFont(f);
-        radioBtn2.setFont(f);
+        Font font = new Font("MV Boli", Font.PLAIN, 25);
+        radioBtn1.setFont(font);
+        radioBtn2.setFont(font);
+
+        //Focus
+        radioBtn1.setFocusable(false);
+        radioBtn2.setFocusable(false);
 
         //Button group
         ButtonGroup gender = new ButtonGroup();
         gender.add(radioBtn1);
         gender.add(radioBtn2);
+
+        //Adding radio buttons to frame
+        frame.add(radioBtn1);
+        frame.add(radioBtn2);
+
+        //Making frame visible
+        frame.setVisible(true);
     }
 }

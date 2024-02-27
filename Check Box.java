@@ -14,7 +14,7 @@ class CheckBox
         frame.setLocation(500, 100);
 
 
-        //Check boxes
+        //Creating check boxes
         JCheckBox checkBox1 = new JCheckBox();
         JCheckBox checkBox2 = new JCheckBox();
 
@@ -40,7 +40,7 @@ class CheckBox
         gender.add(checkBox1);
         gender.add(checkBox2);
 
-        //Adding checkbox to frame
+        //Adding check boxes to frame
         frame.add(checkBox1);
         frame.add(checkBox2);
 
