@@ -1,8 +1,5 @@
 import java.awt.*;
-import java.awt.font.TextLayout;
 import javax.swing.*;
-import javax.swing.event.CaretEvent;
-import javax.swing.text.Caret;
 
 class TextField
 {
