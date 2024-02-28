@@ -7,61 +7,75 @@ class ComboBox
     {
         /* Basic JFrame */
         JFrame frame = new JFrame();
-        frame.setVisible(true);
-        frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
         frame.setTitle("My app");
-        frame.setSize(400, 300);
-        frame.setLocation(600, 100);
+        frame.setSize(600, 500);
+        frame.setLocation(500, 100);
 
 
-        //Combo Box (Drop Down)
+        //Creating a combo box
         String menu[] = {"Pizza", "Burger", "Pasta", "Salad", "Water"};
-        JComboBox dd = new JComboBox(menu);
-
-        //Adding combo box to frame
-        frame.add(dd);
+        JComboBox comboBox = new JComboBox(menu);
 
         //Dimensions
-        dd.setBounds(140, 30, 100, 30);
+        comboBox.setBounds(220, 100, 100, 30);
 
         //Font
-        Font f = new Font("Arial", Font.BOLD, 22);
-        dd.setFont(f);
+        Font font = new Font("Arial", Font.BOLD, 22);
+        comboBox.setFont(font);
 
         //Default selected item
-        dd.setSelectedItem("Burger");
+        comboBox.setSelectedItem("Burger");
 
         //Default selected index
-        dd.setSelectedIndex(3);
+        comboBox.setSelectedIndex(3);
 
-        //Adding new items
-        dd.addItem("Milk");
-        dd.addItem("Cola");
+        //Adding new item
+        comboBox.addItem("Milk");
+        comboBox.addItem("Cola");
+
+        //Adding item at index
+        comboBox.insertItemAt("Fries", 2);
 
         //Removing item
-        dd.removeItem("Pasta");
+        comboBox.removeItem("Pasta");
+
+        //Removing item at index
+        comboBox.removeItemAt(4);
+
+        //Removing all items
+        /* comboBox.removeAllItems(); */
+
+        /*------------------------------------------------------------*/
 
         //Button
         JButton button = new JButton();
-        frame.add(button);
-        button.setBounds(140, 100, 100, 30);
+        button.setBounds(220, 200, 100, 30);
         button.setText("Select");
+        button.setFocusable(false);
         Font button_font = new Font("Arial", Font.PLAIN, 18);
         button.setFont(button_font);
+        frame.add(button);
 
         //Label
         JLabel label = new JLabel();
-        frame.add(label);
-        label.setBounds(160, 150, 100, 30);
+        label.setBounds(240, 300, 100, 30);
         label.setText("");
         Font label_font = new Font("Verdana", Font.PLAIN, 20);
         label.setFont(label_font);
+        frame.add(label);
 
-        //Button action listener
+        //Action listener
         button.addActionListener((e) -> {
-            String item = dd.getSelectedItem().toString();
+            String item = comboBox.getSelectedItem().toString();
             label.setText(item);
         });
+
+        //Adding combo box to frame
+        frame.add(comboBox);
+
+        //Making frame visible
+        frame.setVisible(true);
     }
 }
